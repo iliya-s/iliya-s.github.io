@@ -89,24 +89,12 @@ img { display: block; max-width: 100%; }
   padding: 80px 0 64px;
 }
 
-.hero-intro {
-  display: flex;
-  align-items: flex-start;
-  gap: 48px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 0;
-}
-
 .hero-photo {
-  flex-shrink: 0;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   overflow: hidden;
-  margin-top: 8px;
+  margin-bottom: 28px;
 }
 
 .hero-photo img {
@@ -144,7 +132,6 @@ img { display: block; max-width: 100%; }
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--text);
-  max-width: 600px;
 }
 
 .actions {
@@ -443,14 +430,9 @@ a.card:hover::after {
     padding: 56px 0 48px;
   }
 
-  .hero-intro {
-    flex-direction: column-reverse;
-    gap: 32px;
-  }
-
   .hero-photo {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .page-header {
