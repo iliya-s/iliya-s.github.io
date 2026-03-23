@@ -455,4 +455,29 @@ a.card:hover::before {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* Show link indicators permanently on mobile */
+  a.card {
+    padding-left: 12px;
+  }
+
+  a.card::before {
+    opacity: 0.3;
+  }
+
+  a.card:active::before {
+    opacity: 1;
+  }
+
+  .writing-card {
+    padding-left: 12px;
+  }
+
+  .writing-card::after {
+    opacity: 0.3;
+  }
+
+  .writing-card:active::after {
+    opacity: 1;
+  }
 }
