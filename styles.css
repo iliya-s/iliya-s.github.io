@@ -42,6 +42,7 @@ img { display: block; max-width: 100%; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 28px;
+  width: 100%;
 }
 
 /* ── Nav ────────────────────────────────────────────────── */
@@ -184,7 +185,7 @@ img { display: block; max-width: 100%; }
 
 /* ── Page header (inner pages) ──────────────────────────── */
 .page-header {
-  padding: 48px 0 0;
+  padding: 48px 0 20px;
   margin-bottom: 0;
 }
 
@@ -203,11 +204,11 @@ img { display: block; max-width: 100%; }
 
 /* ── Sections ───────────────────────────────────────────── */
 .section {
-  padding: 48px 0;
+  padding: 16px 0;
 }
 
 .section + .section {
-  border-top: 1px solid var(--line);
+  border-top: none;
 }
 
 .section-label {
@@ -241,22 +242,28 @@ a.card {
   position: relative;
   display: block;
   text-decoration: none;
+  padding-left: 0;
+  transition: padding-left 0.25s ease, border-color 0.2s;
 }
 
-a.card::after {
+a.card::before {
   content: "";
   position: absolute;
+  left: 0;
   top: 20px;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-top: 1.5px solid var(--line);
-  border-right: 1.5px solid var(--line);
-  transition: border-color 0.2s;
+  bottom: 20px;
+  width: 2px;
+  background: var(--text);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-a.card:hover::after {
-  border-color: var(--muted);
+a.card:hover {
+  padding-left: 14px;
+}
+
+a.card:hover::before {
+  opacity: 1;
 }
 
 .card h3 {
@@ -327,8 +334,9 @@ a.card:hover::after {
   background: transparent;
   border-top: 1px solid var(--line);
   padding: 20px 0;
+  padding-left: 0;
   margin-bottom: 0;
-  transition: border-color 0.2s;
+  transition: padding-left 0.25s ease, border-color 0.2s;
 }
 
 .writing-card:last-of-type {
@@ -354,17 +362,21 @@ a.card:hover::after {
 .writing-card::after {
   content: "";
   position: absolute;
+  left: 0;
   top: 20px;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-top: 1.5px solid var(--line);
-  border-right: 1.5px solid var(--line);
-  transition: border-color 0.2s;
+  bottom: 20px;
+  width: 2px;
+  background: var(--text);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.writing-card:hover {
+  padding-left: 14px;
 }
 
 .writing-card:hover::after {
-  border-color: var(--muted);
+  opacity: 1;
 }
 
 .writing-card p {
