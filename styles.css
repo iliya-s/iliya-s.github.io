@@ -240,17 +240,24 @@ img { display: block; max-width: 100%; }
 
 a.card {
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-a.card h3::after {
-  content: " ↗";
-  font-size: 0.85em;
-  color: var(--light);
-  transition: color 0.2s;
+a.card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 12px;
+  height: 12px;
+  border-top: 1.5px solid var(--line);
+  border-right: 1.5px solid var(--line);
+  transition: border-color 0.2s;
 }
 
-a.card:hover h3::after {
-  color: var(--text);
+a.card:hover::after {
+  border-color: var(--muted);
 }
 
 .card h3 {
@@ -321,6 +328,8 @@ a.card:hover h3::after {
 /* ── Writing cards ──────────────────────────────────────── */
 .writing-card {
   display: block;
+  position: relative;
+  overflow: hidden;
   padding: 24px 26px;
   background: var(--card);
   border: 1px solid var(--line);
@@ -341,15 +350,20 @@ a.card:hover h3::after {
   letter-spacing: -0.01em;
 }
 
-.writing-card h3::after {
-  content: " ↗";
-  font-size: 0.85em;
-  color: var(--light);
-  transition: color 0.2s;
+.writing-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 12px;
+  height: 12px;
+  border-top: 1.5px solid var(--line);
+  border-right: 1.5px solid var(--line);
+  transition: border-color 0.2s;
 }
 
-.writing-card:hover h3::after {
-  color: var(--text);
+.writing-card:hover::after {
+  border-color: var(--muted);
 }
 
 .writing-card p {
