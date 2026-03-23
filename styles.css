@@ -238,6 +238,21 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
+a.card {
+  cursor: pointer;
+}
+
+a.card h3::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--light);
+  transition: color 0.2s;
+}
+
+a.card:hover h3::after {
+  color: var(--text);
+}
+
 .card h3 {
   font-size: 1.08rem;
   font-weight: 600;
@@ -324,6 +339,17 @@ img { display: block; max-width: 100%; }
   font-weight: 600;
   margin-bottom: 6px;
   letter-spacing: -0.01em;
+}
+
+.writing-card h3::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--light);
+  transition: color 0.2s;
+}
+
+.writing-card:hover h3::after {
+  color: var(--text);
 }
 
 .writing-card p {
